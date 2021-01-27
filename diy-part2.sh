@@ -20,3 +20,12 @@ sed -i 's/+luci-theme-bootstrap/+luci-theme-argon/g' feeds/luci/collections/luci
 
 #biiki
 sed -i 's/R21.1.18/R21.1.18 Complied by biki/g' package/lean/default-settings/files/zzz-default-settings
+
+#软件
+cd package/lean/
+rm -rf luci-theme-argon  
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
+git clone https://github.com/jerrykuku/luci-app-argon-config
+git clone https://github.com/tty228/luci-app-serverchan
+git clone https://github.com/jerrykuku/lua-maxminddb.git  
+git clone https://github.com/jerrykuku/luci-app-vssr.git  
