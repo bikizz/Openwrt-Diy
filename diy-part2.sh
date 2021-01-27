@@ -11,4 +11,12 @@
 #
 
 # Modify default IP
-#sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/10.10.10.1/g' package/base-files/files/bin/config_generate
+sed -i 's/"192.168.$((addr_offset++)).1/"10.10.$((addr_offset++)).1/g' package/base-files/files/bin/config_generate 
+sed -i 's/hostname='OpenWrt'/hostname='HomeRouter'/g' package/base-files/files/bin/config_generate
+
+#主题
+sed -i 's/+luci-theme-bootstrap/+luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+
+#biiki
+sed -i 's/R21.1.18/R21.1.18 Complied by biki/g' package/lean/default-settings/files/zzz-default-settings
